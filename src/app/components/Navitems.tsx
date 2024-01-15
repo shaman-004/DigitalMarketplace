@@ -1,44 +1,41 @@
-
 'use client';
+import Link from 'next/link';
 import React, { useState } from 'react'
-const Navitems = () => {
-  const[activeIndex, setActiveIndex] = useState<null | number>(null)
-  return (
-    <div className='flex justify-center items-center  gap-4 h-full sm:text-left'>
-      <div className='flex items-center'>
-        <a
-          href='#'
-          className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
-        >
-          Home
-        </a>
-      </div>
-      <div className='flex items-center'>
-        <a
-          href='#'
-          className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
-        >
-          About
-        </a>
-      </div>
-      <div className='flex items-center'>
-        <a
-          href='#'
-          className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
-        >
-          Contact
-        </a>
-      </div>
-      <div className='flex items-center'>
-        <a
-          href='#'
-          className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
-        >
-          Blog
-        </a>
-      </div>
+import {useRouter} from 'next/router';
+import { Button } from './ui/button';
+import { PRODUCT_CATEGORIES } from '@/config';
+import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
+type Category=typeof PRODUCT_CATEGORIES[number]
+
+interface NavitemProps{
+category:Category
+handleOpen:()=>void
+isOpen:boolean
+isAnyOpen:boolean
+}
+
+const Navitems =
+ ({isAnyOpen,
+  category,
+  handleOpen,
+  isOpen,
+  
+}:NavitemProps) => {
+  return <div className='flex'>
+    <div className='relative flex items-center'>
+      <Button className='gap-1.5' onClick={handleOpen} variant={isOpen?'secondary': isAnyOpen?'ghost':'outline'}>
+        {category.label}
+        <ChevronDown className={cn("h-4 w-4 transition-all text-muted-foreground",
+        {
+          '-rotate-180':isOpen,
+        })}/>
+      </Button>
     </div>
-  )
+  </div>
+    
+    
+
 }
 
 export default Navitems
