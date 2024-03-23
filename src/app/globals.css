@@ -54,8 +54,8 @@
 }
 
 
-/*  
-@layer base {
+ 
+/* @layer base {
   
   * {
     @apply border-border;

@@ -15,7 +15,7 @@ description:"Get your hands on the latest and greatest digital assets,with a hug
  {
 name:'Guranteed Quality',
 Icon:CheckCircle,
-description:"Get your hands on the latest and greatest Quality assets.",
+description:"Get your hands on the latest and greatest Quality assets and guranteed asset .",
 },
  {
 name:'For the Environment',
@@ -25,7 +25,6 @@ description:"Best assets in the overall planet in your cart go get it now,with t
 ]
   return (
     <>
-  <Wrapper>
   <div className='py-20 mx-auto text-center flex flex-col  items-center max-w-3xl'>
     <h1 className='text-4xl font-bold tracking-tight text-gray-600 sm:text-4xl'>
       Your marketplace for high-quality{" "}
@@ -34,12 +33,12 @@ description:"Best assets in the overall planet in your cart go get it now,with t
     <p className='mt-3 text-center text-lg text-gray-500 sm:mt-5 sm:text-base sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl'>
       Buy and sell digital assets from a vast community of independent creators.
     </p>
-    <div className='flex flex-col text-center items-center sm:flex-row gap-4 mt-5 p-9'>
-<Link href="/products" className={buttonVariants({ variant: "outline" })}>Trending One</Link>
-<Button variant='ghost'>Our Quality &rarr;</Button>
+    <div className=' flex flex-col text-center items-center sm:flex-row gap-4 mt-5 p-9'>
+<Link href="/products" className={buttonVariants({ variant:"outline"})}>Trending One</Link>
+<Button variant='ghost'> &copy; Our Quality &rarr;</Button>
     </div>
   </div>
- </Wrapper>
+ 
 
  <section className="border-t border-gray-200 bg-gray-50">
 <Wrapper className="py-20" >

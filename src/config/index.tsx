@@ -5,18 +5,18 @@ export const PRODUCT_CATEGORIES=[
     featured:[
       {
         name:'Editor picks',
-        href:'#',
-        imageSrc:'/public/ui/mixed.jpg',
+        href:'# ',
+        imageSrc:'/ui/mixed.jpg'
       },
       {
         name:'New Arrivals',
         href:'#',
-        imageSrc:'/public/ui/blue.jpg',
+        imageSrc:'/blue.jpg'
       },
       {
         name:'Popular',
         href:'#',
-        imageSrc:'/public/ui/purple.jpg',
+        imageSrc:'/purple.jpg',
       }
 
     ]

@@ -1,12 +1,20 @@
 'use client';
 import { PRODUCT_CATEGORIES } from "@/config";
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Navitems from "./Navitems";
+import { useOnClickOutside } from "@/hooks/onclick";
+
 const Navitem = () => {
     const[activeIndex, setActiveIndex] = useState<null | number>(null)
     
     const isAnyOpen=activeIndex!==null
-  return <div className="flex gap-4 h-full" >
+
+    const navref =useRef<HTMLDivElement|null>(null)
+
+    useOnClickOutside(navref,()=>setActiveIndex(null))
+
+  return (
+  <div className="flex gap-4 h-full" >
 {
  PRODUCT_CATEGORIES.map((category,i)=>{
     const handleopen=()=>{
@@ -22,12 +30,9 @@ const Navitem = () => {
     return(
         <Navitems category={category} handleOpen={handleopen} isOpen={isOpen} key={category.value} isAnyOpen={isAnyOpen}/>
     )
-})
+})}
 
+  </div>  
+)
 }
-  </div> 
-   
-  
-}
-
 export default Navitem
